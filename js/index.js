@@ -1,6 +1,6 @@
 const admin = {
-    username: 'Admin123',
-    password: 'Admin@123'
+    username: '123',
+    password: '123'
 }
 window.onload = () => {
     localStorage.setItem('admin', JSON.stringify(admin))
@@ -18,7 +18,7 @@ adminForm.addEventListener('submit', (event) => {
         errorMsg.textContent = 'Please enter your login details'
     }
     else if (username === admin.username && password === admin.password) {
-        console.log('ok')
+        window.location.pathname = 'html/home.html'
     }
     else {
         errorMsg.textContent = 'Please enter valid credentials'
@@ -30,3 +30,5 @@ adminForm.addEventListener('submit', (event) => {
 const getInptValue = (id) => {
     return document.getElementById(id).value
 }
+
+

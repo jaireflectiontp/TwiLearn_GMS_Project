@@ -1,0 +1,97 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary: #0e141e;
+  --secondary: #111827;
+  --highlight: #32c766;
+  --border: #576871;
+  --error: #dd2c00;
+}
+a {
+  text-decoration: none;
+}
+a > i,
+i {
+  padding-right: 7px;
+}
+header .header-in,
+nav .navigation-in,
+main .main-in {
+  max-width: 1400px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 1em;
+  border: 1px solid;
+}
+header .header-in {
+  display: flex;
+  justify-content: space-between;
+}
+header .header-in .administrator {
+  cursor: pointer;
+  position: relative;
+}
+header .header-in .administrator .admin-controls {
+  position: absolute;
+  right: 0px;
+  top: 35px;
+  width: 200px;
+  padding: 0.6em 1em;
+
+  gap: 1rem;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: #fff;
+  z-index: 1;
+  display: none;
+}
+header .header-in .administrator .admin-controls .admin-account:hover .fa-gear {
+  transform: rotateZ("30deg");
+}
+nav .navigation-in .nav-list {
+  display: flex;
+  gap: 1.5em;
+}
+nav .navigation-in .nav-list .nav-items {
+  list-style: none;
+}
+nav .navigation-in .nav-list .nav-items .nav-links {
+  text-transform: capitalize;
+  font-weight: bold;
+  color: #0e141e;
+  position: relative;
+}
+nav .navigation-in .nav-list .nav-items .nav-links::after {
+  position: absolute;
+  bottom: -10px;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #0e141e;
+  transform: scaleX(0);
+  transition: 0.5s;
+}
+nav .navigation-in .nav-list .nav-items:hover .nav-links::after {
+  transform: scaleX(1);
+}
+
+main .main-in .adminTable {
+  border: 1px solid;
+  padding: 1em;
+  margin: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+main .main-in .adminTable .col {
+  width: 32%;
+  height: 180px;
+  border: 1px solid red;
+  border-radius: 0.5em;
+  padding: 1em;
+}
