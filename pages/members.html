@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Members</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/members.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="header-in">
+            <div class="logo">Gym Management System</div>
+            <div class="administrator" onclick="openAdminModal()"><i class="fa-regular fa-user"
+                    id="adminIcon"></i>Administrator
+                <div class="admin-controls">
+                    <a href="#1212" class="admin-account"><i class="fa-solid fa-gear"></i>Manage Account</a>
+                    <a href="/html/index.html " class="admin-logout"><i class="fa-solid fa-power-off"></i>Log out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="navigation-in">
+            <ul class="nav-list">
+                <li class="nav-items"><a class="nav-links" href="./home.html"><i class="fa-solid fa-house"></i>home</a>
+                </li>
+                <li class="nav-items"><a class="nav-links" href="./members.html"><i
+                            class="fa-solid fa-users"></i>members</a></li>
+                <li class="nav-items"><a class="nav-links" href="#"><i
+                            class="fa-solid fa-address-card"></i>membership</a></li>
+                <li class="nav-items"><a class="nav-links" href="#"><i
+                            class="fa-solid fa-calendar-days"></i>schedule</a></li>
+                <li class="nav-items"><a class="nav-links" href="#"><i class="fa-solid fa-user-ninja"></i>trainer</a>
+                <li class="nav-items"><a class="nav-links" href="#"><i class="fa-solid fa-clipboard-list"></i>diet
+                        plan</a>
+                <li class="nav-items"><a class="nav-links" href="#"><i class="fa-solid fa-table-list"></i>package</a>
+                <li class="nav-items"><a class="nav-links" href="#"><i class="fa-solid fa-user-group"></i>users</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="main-in">
+            <div class="member-board">
+                <div class="member-board-header">
+                    <h3>member list</h3>
+                    <button id="add-member" class="member-add-btn"><i class="fa-solid fa-plus"></i>New</button>
+                    <div class="add-member-modal">
+                        <div class="modal-heading">
+                            <h3><i class="fa-solid fa-plus"></i>New Member</h3>
+                            <i id="closeModalBtn" class="fa-regular fa-circle-xmark"></i>
+
+                        </div>
+                        <form id="add-member" action="member-detail">
+                            <div class="form-control">
+                                <div class="input-control">
+                                    <label for="ID">ID NO.</label>
+                                    <input type="number" name="memberId" id="memberId">
+                                </div>
+                            </div>
+
+                            <div class="form-control">
+                                <div class="input-control">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" name="firstName" id="firstName">
+                                </div>
+                                <div class="input-control">
+                                    <label for="middleName">Middle Name</label>
+                                    <input type="text" name="middleName" id="middleName">
+                                </div>
+                                <div class="input-control">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" name="lastName" id="lastName">
+                                </div>
+                            </div>
+
+                            <div class="form-control">
+                                <div class="input-control">
+                                    <label for="firstName">Email</label>
+                                    <input type="email" name="email" id="email">
+                                </div>
+                                <div class="input-control">
+                                    <label for="contact">Contact</label>
+                                    <input type="tel" name="contact" id="contact">
+                                </div>
+                                <div class="input-control">
+                                    <label for="gender">Gender</label>
+                                    <select name="gender" id="gender">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-control">
+                                <div class="input-control">
+                                    <label for="address">Address</label>
+                                    <textarea name="address" rows="5" id="address"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-control">
+                                <div class="input-control">
+                                    <label for="plan">Plan</label>
+                                    <input type="text" name="plan" id="plan">
+                                </div>
+                                <div class="input-control">
+                                    <label for="package">Package</label>
+                                    <input type="text" name="package" id="package">
+                                </div>
+                                <div class="input-control">
+                                    <label for="trainer">Trainer</label>
+                                    <input type="text" name="trainer" id="trainer">
+                                </div>
+                            </div>
+
+                            <div class="form-control">
+                                <button onclick="addNewMember()" type="button">Save</button>
+                                <button type="button" onclick="closeModal()">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="member-filter-section">
+                    dfd
+                </div>
+                <div class="member-data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Member Id</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../js/admin.js"></script>
+</body>
+
+</html>

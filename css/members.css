@@ -1,0 +1,137 @@
+.member-board {
+  border: 1px solid red;
+}
+.member-board .member-board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 1em;
+  border: 1px solid;
+}
+.member-board .member-board-header h3 {
+  text-transform: capitalize;
+}
+.member-board .member-board-header .member-add-btn {
+  padding: 6px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+.member-board .member-board-header .add-member-modal {
+  border: 1px solid red;
+  display: none;
+  padding: 1em;
+  position: fixed;
+  top: 6%;
+  left: 22%;
+  width: 800px;
+  background: #fff;
+  z-index: 9;
+  border-radius: 5px;
+}
+.member-board .member-board-header .add-member-modal .modal-heading {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1em;
+  border-bottom: 1px solid;
+}
+/*.member-board .member-board-header .add-member-modal */
+.member-board .member-board-header .add-member-modal form {
+  display: grid;
+  gap: 1.5em;
+  padding-block: 1em;
+}
+.member-board .member-board-header .add-member-modal form .form-control {
+  display: flex;
+  justify-content: space-between;
+}
+
+.member-board
+  .member-board-header
+  .add-member-modal
+  form
+  .form-control
+  .input-control {
+  width: 30%;
+  display: grid;
+  gap: 0.5em;
+}
+
+.member-board
+  .member-board-header
+  .add-member-modal
+  form
+  .form-control
+  .input-control
+  input,
+select,
+textarea {
+  padding: 8px 10px;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid #ccc;
+  background-color: #fefefe;
+}
+.member-board
+  .member-board-header
+  .add-member-modal
+  form
+  .form-control:nth-child(4)
+  .input-control {
+  width: 100%;
+}
+#closeModalBtn:hover {
+  color: red;
+}
+.member-board .member-filter-section,
+.member-data-table {
+  padding: 0.8em 1em;
+  border: 1px solid;
+}
+.member-data-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.member-data-table table th,
+td {
+  border: 1px solid;
+  padding: 8px;
+}
+td {
+  text-align: left;
+}
+tr th:first-child,
+td:first-child {
+  width: 5%;
+}
+tr th:last-child,
+td:last-child {
+  width: 22%;
+}
+tr th:nth-child(2),
+td:nth-child(2) {
+  width: 12%;
+}
+tr :nth-child(3),
+td:nth-child(3) {
+  width: 23%;
+}
+tr th:nth-child(4),
+td:nth-child(4) {
+  width: 23%;
+}
+tr th:nth-child(5),
+td:nth-child(5) {
+  width: 15%;
+}
+tr td:last-child .btn-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+tr td:last-child .btn-wrapper button {
+  padding: 2px 10px;
+  cursor: pointer;
+}
