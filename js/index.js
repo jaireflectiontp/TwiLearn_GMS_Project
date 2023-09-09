@@ -18,17 +18,16 @@ adminForm.addEventListener('submit', (event) => {
         errorMsg.textContent = 'Please enter your login details'
     }
     else if (username === admin.username && password === admin.password) {
-        window.location.pathname = 'html/home.html'
+        window.location.href = '../pages/home.html'
     }
     else {
         errorMsg.textContent = 'Please enter valid credentials'
     }
-
-
 })
 
 const getInptValue = (id) => {
     return document.getElementById(id).value
 }
+
 
 
