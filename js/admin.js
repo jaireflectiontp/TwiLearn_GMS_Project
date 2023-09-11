@@ -23,36 +23,96 @@ const closeModal = () => {
 }
 
 closeAddModalBtn.addEventListener('click', closeModal)
-
-
+/*-------------------------------------------------------------------------------------------------------------------------- */
+const getFieldValue = (id) => {
+    return document.getElementById(id).value
+}
 
 const loadTable = () => {
     let newMemberList = JSON.parse(localStorage.getItem('memberList'))
     let tableBody = document.getElementById('tbody')
-    const mapedData = newMemberList.map((members) => {
+    let mapedData = newMemberList?.map((members) => {
         return (
             `
         <tr>
         <td>Sr No</td>
-        <td>${members.memberId}</td>
+        <td class='mId'>${members.memberId}</td>
         <td>${members.firstName, members.lastName}</td>
         <td>${members.email}</td>
         <td>Contact</td>
         <td>
-            <div class="btn-wrapper"><button>View</button> <button>Edit</button>
-                <button>Delete</button>
+            <div class="btn-wrapper"><button>View</button> <button class='editMember'>Edit</button>
+                <button class='deleteMember'>Delete</button>
             </div>
         </td>
     </tr>
         `
         )
     })
-    tableBody.innerHTML = mapedData.join('')
+    tableBody.innerHTML = mapedData?.join('')
+
+    /*   let deleteMember = document.querySelectorAll('.deleteMember')
+   
+       deleteMember.forEach((button, index) => {
+           button.addEventListener('click', () => {
+               let id = newMemberList[index].memberId
+               newMemberList = newMemberList.filter((elem) => {
+                   return elem.memberId !== id
+               })
+               localStorage.setItem('memberList', JSON.stringify(newMemberList));
+               // console.log(newMemberList)
+               loadTable()
+           });
+       });
+   
+   
+       let editMember = document.querySelectorAll('.editMember')
+       editMember.forEach((button, index) => {
+           button.addEventListener('click', () => {
+               let id = newMemberList[index].memberId
+               let selectmember = newMemberList.filter((elem) => {
+                   return elem.memberId === id
+               })
+               console.log('edit', selectmember)
+           })
+       })*/
+
+    const handleMemberAction = (index, action) => {
+        let id = newMemberList[index].memberId;
+        if (action === 'delete') {
+            newMemberList = newMemberList.filter((elem) => elem.memberId !== id);
+            localStorage.setItem('memberList', JSON.stringify(newMemberList));
+            loadTable();
+        } else if (action === 'edit') {
+            let selectmember = newMemberList.filter((elem) => elem.memberId === id);
+            console.log('edit', selectmember);
+        }
+    }
+
+    let deleteMember = document.querySelectorAll('.deleteMember');
+    deleteMember.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            handleMemberAction(index, 'delete');
+        });
+    });
+
+    let editMember = document.querySelectorAll('.editMember');
+    editMember.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            handleMemberAction(index, 'edit');
+        });
+    });
+
+
 }
 
 loadTable()
 
-const addNewMember = (e) => {
+
+
+let addNewMember = document.getElementById('add')
+
+addNewMember.addEventListener('click', () => {
     let memberId = getFieldValue('memberId')
     let firstName = getFieldValue('firstName')
     let middleName = getFieldValue('middleName')
@@ -81,13 +141,14 @@ const addNewMember = (e) => {
     memberList.push(membersInfo);
     localStorage.setItem('memberList', JSON.stringify(memberList));
     console.log('memberList', memberList)
+    document.querySelector('.add-member-modal').style.display = 'none'
     loadTable()
-}
+})
 
 
 
-const getFieldValue = (id) => {
-    return document.getElementById(id).value
-}
+
+
+
 
 
