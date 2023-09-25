@@ -1,0 +1,115 @@
+.dietPlans {
+  padding: 1em;
+  display: flex;
+  justify-content: space-around;
+}
+.dietPlans .dietTypes {
+  border: 1px solid red;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.dietChartContainer {
+  border: 1px solid green;
+  padding-block: 1em;
+}
+.dietChartContainer .dailyDietCard {
+  position: relative;
+  margin-bottom: 3em;
+}
+.dietChartContainer .dailyDietCard .dietCard-in {
+  padding: 1em 2em 1em 8em;
+  background-color: blue;
+  display: flex;
+  justify-content: space-between;
+  height: 176px;
+}
+.dietChartContainer .dailyDietCard .dietCard-in .mealTime {
+  width: 33%;
+  border: 1px solid white;
+  text-align: left;
+}
+.dietChartContainer .dailyDietCard .dietCard-in .mealTime ul {
+  margin: 1em 1em 1em 2em;
+}
+.dayTag {
+  background-color: aqua;
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+  width: 170px;
+  height: 100px;
+  transform: rotateZ(-90deg);
+  position: absolute;
+  top: 10px;
+  left: -50px;
+  display: grid;
+  place-items: center;
+}
+.dailyDietCard::after {
+  background-color: rgb(2, 107, 107);
+  content: "";
+  height: 25px;
+  display: block;
+  position: absolute;
+  top: -25px;
+  left: 84px;
+  width: 20px;
+  clip-path: polygon(0 100%, 0 0, 100% 100%);
+}
+
+.plan-wrapper {
+  border: 2px solid yellowgreen;
+  padding: 2em 0;
+  margin-block: 2em;
+  display: none;
+}
+
+.product-banner {
+  border: 1px solid red;
+  border-radius: 6px;
+  height: 350px;
+  background-image: url(../assets/banner.jpg);
+  background-size: 100% 100%;
+}
+.slider-wrap {
+  position: relative;
+  border: 1px solid red;
+  margin-block: 2em;
+  overflow: hidden;
+  height: 300px;
+}
+.main-slider {
+  width: 180%;
+  position: absolute;
+  display: flex;
+}
+.slides {
+  display: inline-block;
+  width: 310px;
+  text-align: center;
+  background: aqua;
+  height: 300px;
+  margin-inline: 1em;
+  display: grid;
+  place-items: center;
+}
+.carousel {
+  position: relative;
+}
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid greenyellow;
+  padding: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 9;
+}
+.prevBtn {
+  left: -10px;
+}
+.nxtBtn {
+  right: -10px;
+}
