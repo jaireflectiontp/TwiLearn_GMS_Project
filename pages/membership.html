@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Members</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/members.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="header-in">
+            <div class="logo">Gym Management System</div>
+            <div class="administrator" onclick="openAdminModal()"><i class="fa-regular fa-user"
+                    id="adminIcon"></i>Administrator
+                <div class="admin-controls">
+                    <a href="#1212" class="admin-account"><i class="fa-solid fa-gear"></i>Manage Account</a>
+                    <a href="/html/index.html " class="admin-logout"><i class="fa-solid fa-power-off"></i>Log out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="navigation-in">
+            <ul class="nav-list">
+                <ul class="nav-list">
+                    <li class="nav-items"><a class="nav-links" href="./home.html"><i
+                                class="fa-solid fa-house"></i>home</a>
+                    </li>
+                    <li class="nav-items"><a class="nav-links" href="./members.html"><i
+                                class="fa-solid fa-users"></i>members</a></li>
+                    <li class="nav-items"><a class="nav-links" href="./membership.html"><i
+                                class="fa-solid fa-id-card"></i>membership</a>
+                    <li class="nav-items"><a class="nav-links" href="./dietPlan.html"><i
+                                class="fa-solid fa-clipboard-list"></i>diet
+                            plans</a>
+                    <li class="nav-items"><a class="nav-links" href="./store.html"><i
+                                class="fa-solid fa-store"></i>supplement
+                            store</a>
+                    <li class="nav-items"><a class="nav-links" href="#"><i class="fa-solid fa-user-group"></i>users</a>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="main-in">
+            <div class="member-board">
+                <div class="member-board-header">
+                    <h3>memberships</h3>
+                </div>
+                <div class="member-data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Member Id</th>
+                                <th>Name</th>
+                                <th>Diet Plan</th>
+                                <th>Membership</th>
+                                <th>Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody id="membershipTable">
+
+                        </tbody>
+                    </table>
+                    <div id="details-overlay"></div>
+                    <div id="members-details"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../js/membership.js"></script>
+</body>
+
+</html>
