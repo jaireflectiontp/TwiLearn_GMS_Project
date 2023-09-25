@@ -28,20 +28,23 @@
     <nav>
         <div class="navigation-in">
             <ul class="nav-list">
-                <li class="nav-items"><a class="nav-links" href="./home.html"><i class="fa-solid fa-house"></i>home</a>
-                </li>
-                <li class="nav-items"><a class="nav-links" href="./members.html"><i
-                            class="fa-solid fa-users"></i>members</a></li>
-                <li class="nav-items"><a class="nav-links" href="#"><i
-                            class="fa-solid fa-address-card"></i>membership</a></li>
-                <li class="nav-items"><a class="nav-links" href="#"><i
-                            class="fa-solid fa-calendar-days"></i>schedule</a></li>
-                <li class="nav-items"><a class="nav-links" href="#"><i class="fa-solid fa-user-ninja"></i>trainer</a>
-                <li class="nav-items"><a class="nav-links" href="#"><i class="fa-solid fa-clipboard-list"></i>diet
-                        plan</a>
-                <li class="nav-items"><a class="nav-links" href="#"><i class="fa-solid fa-table-list"></i>package</a>
-                <li class="nav-items"><a class="nav-links" href="#"><i class="fa-solid fa-user-group"></i>users</a>
-                </li>
+                <ul class="nav-list">
+                    <li class="nav-items"><a class="nav-links" href="./home.html"><i
+                                class="fa-solid fa-house"></i>home</a>
+                    </li>
+                    <li class="nav-items"><a class="nav-links" href="./members.html"><i
+                                class="fa-solid fa-users"></i>members</a></li>
+                    <li class="nav-items"><a class="nav-links" href="./membership.html"><i
+                                class="fa-solid fa-id-card"></i>membership</a>
+                    <li class="nav-items"><a class="nav-links" href="./dietPlan.html"><i
+                                class="fa-solid fa-clipboard-list"></i>diet
+                            plans</a>
+                    <li class="nav-items"><a class="nav-links" href="./store.html"><i
+                                class="fa-solid fa-store"></i>supplement
+                            store</a>
+                    <li class="nav-items"><a class="nav-links" href="#"><i class="fa-solid fa-user-group"></i>users</a>
+                    </li>
+                </ul>
             </ul>
         </div>
     </nav>
@@ -107,16 +110,33 @@
 
                             <div class="form-control">
                                 <div class="input-control">
-                                    <label for="plan">Plan</label>
-                                    <input type="text" name="plan" id="plan">
+                                    <label for="dietPlan">Diet Plan</label>
+                                    <select id="dietPlan" name="dietPlan">
+                                        <option value="">-----</option>
+                                        <option value="raw">Raw</option>
+                                        <option value="keto">Keto</option>
+                                        <option value="vegan">Vegan</option>
+                                        <option value="noSugar">No sugar</option>
+                                    </select>
+
                                 </div>
                                 <div class="input-control">
-                                    <label for="package">Package</label>
-                                    <input type="text" name="package" id="package">
+                                    <label for="membership">Membership</label>
+                                    <select id="membership" name="membership">
+                                        <option value="">-----</option>
+                                        <option value="basic">Basic</option>
+                                        <option value="professional">Professional</option>
+                                        <option value="elite">Elite</option>
+                                    </select>
                                 </div>
                                 <div class="input-control">
-                                    <label for="trainer">Trainer</label>
-                                    <input type="text" name="trainer" id="trainer">
+                                    <label for="duration">Duration</label>
+                                    <select id="duration" name="duration">
+                                        <option value="1month">1 Month</option>
+                                        <option value="3month">3 Month</option>
+                                        <option value="6month">6 Month</option>
+                                        <option value="12month">12 Month</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -127,9 +147,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="member-filter-section">
-                    dfd
-                </div>
+
                 <div class="member-data-table">
                     <table>
                         <thead>
@@ -142,10 +160,12 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody id="tbody">
+                        <tbody id="membersTable">
 
                         </tbody>
                     </table>
+                    <div id="details-overlay"></div>
+                    <div id="members-details"></div>
                 </div>
             </div>
         </div>
