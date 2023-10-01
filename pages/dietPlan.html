@@ -43,7 +43,6 @@
                     <li class="nav-items"><a class="nav-links" href="./store.html"><i
                                 class="fa-solid fa-store"></i>supplement
                             store</a>
-                    <li class="nav-items"><a class="nav-links" href="#"><i class="fa-solid fa-user-group"></i>users</a>
                     </li>
                 </ul>
             </ul>
@@ -51,16 +50,15 @@
     </nav>
     <main>
         <div class="main-in">
-            <div class="member-board">
-                <div class="member-board-header">
-                    <h3>Diet Plans</h3>
-                </div>
+            <div class="member-board" style="background-color: transparent;">
+
                 <div class="dietPlans">
-                    <span id="keto" class="dietTypes">keto</span>
-                    <span id="vegan" class="dietTypes">vegan</span>
-                    <span id="noSugar" class="dietTypes">nosugar</span>
-                    <span id="raw" class="dietTypes">raw</span>
+                    <span id="keto" data-tab="keto-diet" class="dietTypes">keto</span>
+                    <span id="vegan" data-tab="vegan-diet" class="dietTypes">vegan</span>
+                    <span id="noSugar" data-tab="no-sugar-diet" class="dietTypes">nosugar</span>
+                    <span id="raw" data-tab="raw-diet" class="dietTypes">raw</span>
                 </div>
+
                 <div class="dietChartContainer">
                     <div class="plan-wrapper" id="keto-diet">
                         <div class="dailyDietCard">
@@ -885,6 +883,19 @@
             </div>
         </div>
     </main>
+    <script>
+        const currentPath = window.location.pathname;
+        const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+        const navLinks = document.querySelectorAll('.nav-list a');
+        navLinks.forEach((link) => {
+            const linkPath = link.getAttribute('href')
+            const linkFilename = linkPath.substring(linkPath.lastIndexOf('/') + 1);
+            if (currentPage === linkFilename) {
+                link.classList.add('active-nav');
+            }
+        });
+    </script>
+    <script src="../js/admin.js"></script>
     <script src="../js/dietPlans.js"></script>
     <script src="../js/membership.js"></script>
 </body>

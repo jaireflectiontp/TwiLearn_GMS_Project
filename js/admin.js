@@ -1,8 +1,6 @@
 let adminModal = document.querySelector('.admin-controls')
 let isModalOpen = false
 let adminIcon = document.getElementById('adminIcon')
-//let addNewMember = document.getElementById('add-member')
-
 
 const openAdminModal = () => {
     isModalOpen = !isModalOpen
@@ -23,59 +21,37 @@ const closeModal = () => {
 }
 
 closeAddModalBtn.addEventListener('click', closeModal)
-/*-------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
 const getFieldValue = (id) => {
     return document.getElementById(id).value
 }
 
 const loadTable = () => {
     let newMemberList = JSON.parse(localStorage.getItem('memberList'))
-    let tableBody = document.getElementById('tbody')
+    let membersTable = document.getElementById('membersTable')
     let mapedData = newMemberList?.map((members) => {
         return (
             `
         <tr>
-        <td>Sr No</td>
         <td class='mId'>${members.memberId}</td>
-        <td>${members.firstName, members.lastName}</td>
+        <td>${members.firstName} ${members.middleName} ${members.lastName}</td>
         <td>${members.email}</td>
-        <td>Contact</td>
+        <td>${members.contact}</td>
         <td>
-            <div class="btn-wrapper"><button>View</button> <button class='editMember'>Edit</button>
-                <button class='deleteMember'>Delete</button>
+            <div class="btn-wrapper"><button class='viewDetails'><i class="fa-solid fa-eye"></i>View</button>
+                <button class='deleteMember'><i class="fa-solid fa-trash-can"></i>Delete</button>
             </div>
         </td>
     </tr>
         `
         )
     })
-    tableBody.innerHTML = mapedData?.join('')
+    membersTable.innerHTML = mapedData?.join('')
 
-    /*   let deleteMember = document.querySelectorAll('.deleteMember')
-   
-       deleteMember.forEach((button, index) => {
-           button.addEventListener('click', () => {
-               let id = newMemberList[index].memberId
-               newMemberList = newMemberList.filter((elem) => {
-                   return elem.memberId !== id
-               })
-               localStorage.setItem('memberList', JSON.stringify(newMemberList));
-               // console.log(newMemberList)
-               loadTable()
-           });
-       });
-   
-   
-       let editMember = document.querySelectorAll('.editMember')
-       editMember.forEach((button, index) => {
-           button.addEventListener('click', () => {
-               let id = newMemberList[index].memberId
-               let selectmember = newMemberList.filter((elem) => {
-                   return elem.memberId === id
-               })
-               console.log('edit', selectmember)
-           })
-       })*/
 
     const handleMemberAction = (index, action) => {
         let id = newMemberList[index].memberId;
@@ -83,9 +59,39 @@ const loadTable = () => {
             newMemberList = newMemberList.filter((elem) => elem.memberId !== id);
             localStorage.setItem('memberList', JSON.stringify(newMemberList));
             loadTable();
-        } else if (action === 'edit') {
-            let selectmember = newMemberList.filter((elem) => elem.memberId === id);
-            console.log('edit', selectmember);
+        } else if (action === 'view') {
+            let viewMember = newMemberList.filter((elem) => elem.memberId === id);
+            let memberCard = document.getElementById('members-details')
+            memberCard.style.display = 'grid'
+            document.getElementById('details-overlay').style.display = 'block'
+            const memberDetails = viewMember?.map((details) => {
+                return `
+                           <div class="members-details-container">
+                           <i id="closeDetails" class="fa-regular fa-circle-xmark"></i>
+                             <div class="detail-container-in">
+                                <h3><i class="fa-solid fa-address-card"></i>Member Details</h3>
+                                <ul>
+                                   <li>Member ID: ${details.memberId}</li>
+                                   <li>Name: ${details.firstName} ${details.lastName}</li>
+                                   <li>Email: ${details.email}</li>
+                                   <li>Contact: ${details.contact}</li>
+                                   <li>Gender: ${details.gender}</li>
+                                   <li>Address: ${details.address}</li>
+                                </ul>
+                            </div>
+                          </div>
+                         `
+            })
+
+
+            memberCard.innerHTML = memberDetails
+
+            let closeDetails = document.getElementById('closeDetails')
+            closeDetails.addEventListener('click', () => {
+                memberCard.style.display = 'none'
+                document.getElementById('details-overlay').style.display = 'none'
+            })
+
         }
     }
 
@@ -96,10 +102,10 @@ const loadTable = () => {
         });
     });
 
-    let editMember = document.querySelectorAll('.editMember');
-    editMember.forEach((button, index) => {
+    let viewDetails = document.querySelectorAll('.viewDetails');
+    viewDetails.forEach((button, index) => {
         button.addEventListener('click', () => {
-            handleMemberAction(index, 'edit');
+            handleMemberAction(index, 'view');
         });
     });
 
@@ -120,10 +126,10 @@ addNewMember.addEventListener('click', () => {
     let email = getFieldValue('email')
     let contact = getFieldValue('contact')
     let gender = getFieldValue('gender')
-    let plan = getFieldValue('plan')
-    let package = getFieldValue('package')
-    let trainer = getFieldValue('trainer')
-
+    let dietPlan = getFieldValue('dietPlan')
+    let membership = getFieldValue('membership')
+    let duration = getFieldValue('duration')
+    let address = getFieldValue('address')
     let membersInfo = {
         memberId: memberId,
         firstName: firstName,
@@ -132,9 +138,10 @@ addNewMember.addEventListener('click', () => {
         email: email,
         contact: contact,
         gender: gender,
-        plan: plan,
-        package: package,
-        trainer: trainer
+        address: address,
+        dietPlan: dietPlan,
+        membership: membership,
+        duration: duration
     }
 
     let memberList = localStorage.getItem('memberList') ? JSON.parse(localStorage.getItem('memberList')) : [];
@@ -149,6 +156,4 @@ addNewMember.addEventListener('click', () => {
 
 
 
-
-
-
+/**/

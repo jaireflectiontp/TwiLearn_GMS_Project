@@ -9,11 +9,15 @@
 </head>
 
 <body>
+    <div class="button-wrapper">
+        <button type="button" id="adminBtn">Admin</button>
+        <button id="memberBtn">Member</button>
+    </div>
     <div class="main-container">
-        <div class="container">
+        <div id="container" class="container" style="display: none;">
             <div class="admin-login-panel">
-                <div id="loginError"></div>
-                <form id="adminLogin">
+                <div id="errorMsg"></div>
+                <form id="adminForm">
                     <div class="inpt-control">
                         <label for="username">username</label>
                         <input type="text" id="username" name="username" placeholder="Enter your username">
@@ -27,6 +31,23 @@
                         <button type="submit">Login</button>
                     </div>
                 </form>
+
+            </div>
+        </div>
+
+        <div id="member-container" class="container" style="display: none;">
+            <div class="admin-login-panel">
+                <div id="memberErrorMsg"></div>
+                <form id="memberForm">
+                    <div class="inpt-control">
+                        <label for="memberId">Member ID</label>
+                        <input type="text" id="memberId" name="memberId" placeholder="Enter your memberId">
+                    </div>
+                    <div class="inpt-control btn-control">
+                        <button type="submit">Login</button>
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>

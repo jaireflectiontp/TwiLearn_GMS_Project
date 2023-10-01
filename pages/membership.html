@@ -36,13 +36,14 @@
                                 class="fa-solid fa-users"></i>members</a></li>
                     <li class="nav-items"><a class="nav-links" href="./membership.html"><i
                                 class="fa-solid fa-id-card"></i>membership</a>
+                    </li>
                     <li class="nav-items"><a class="nav-links" href="./dietPlan.html"><i
                                 class="fa-solid fa-clipboard-list"></i>diet
                             plans</a>
+                    </li>
                     <li class="nav-items"><a class="nav-links" href="./store.html"><i
                                 class="fa-solid fa-store"></i>supplement
                             store</a>
-                    <li class="nav-items"><a class="nav-links" href="#"><i class="fa-solid fa-user-group"></i>users</a>
                     </li>
                 </ul>
             </ul>
@@ -58,12 +59,12 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Sr No</th>
                                 <th>Member Id</th>
                                 <th>Name</th>
                                 <th>Diet Plan</th>
                                 <th>Membership</th>
                                 <th>Duration</th>
+                                <th>Bill</th>
                             </tr>
                         </thead>
                         <tbody id="membershipTable">
@@ -75,7 +76,24 @@
                 </div>
             </div>
         </div>
+        <div class="billOverlay" id="bill-overlay"></div>
+        <div class="bill-wrapper" id="bill-temp">
+
+        </div>
     </main>
+    <script>
+        const currentPath = window.location.pathname;
+        const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+        const navLinks = document.querySelectorAll('.nav-list a');
+        navLinks.forEach((link) => {
+            const linkPath = link.getAttribute('href')
+            const linkFilename = linkPath.substring(linkPath.lastIndexOf('/') + 1);
+            if (currentPage === linkFilename) {
+                link.classList.add('active-nav');
+            }
+        });
+    </script>
+    <script src="../js/admin.js"></script>
     <script src="../js/membership.js"></script>
 </body>
 

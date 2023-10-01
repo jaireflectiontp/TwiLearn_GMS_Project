@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Member Dashboard</title>
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
@@ -15,8 +15,8 @@
     <header>
         <div class="header-in">
             <div class="logo">Gym Management System</div>
-            <div class="administrator" onclick="openAdminModal()"><i class="fa-regular fa-user"
-                    id="adminIcon"></i>Administrator
+            <div class="administrator" onclick="openAdminModal()"><i class="fa-regular fa-user" id="adminIcon"></i><span
+                    id="memberName"></span>
                 <div class="admin-controls">
                     <a href="#1212" class="admin-account"><i class="fa-solid fa-gear"></i>Manage Account</a>
                     <a href="/html/index.html " class="admin-logout"><i class="fa-solid fa-power-off"></i>Log out</a>
@@ -29,12 +29,6 @@
             <ul class="nav-list">
                 <li class="nav-items">
                     <a class="nav-links" href="./home.html"><i class="fa-solid fa-house"></i>home</a>
-                </li>
-                <li class="nav-items">
-                    <a class="nav-links" href="./members.html"><i class="fa-solid fa-users"></i>members</a>
-                </li>
-                <li class="nav-items"><a class="nav-links" href="./membership.html"><i
-                            class="fa-solid fa-id-card"></i>membership</a>
                 </li>
                 <li class="nav-items"><a class="nav-links" href="./dietPlan.html"><i
                             class="fa-solid fa-clipboard-list"></i>diet
@@ -49,13 +43,10 @@
     </nav>
     <main>
         <div class="main-in">
-            <h4 style="margin-bottom: 0.6em;">Welcome back Admin!</h4>
+            <h4 style="margin-bottom: 0.6em;">Welcome back <span id="memberName"></span></h4>
             <hr>
-            <div class="adminTable">
-                <div id="membersCount" class="col"></div>
-                <div class="col">Active Memberships</div>
-                <div class="col">New Plans</div>
-            </div>
+            <h2 style="margin-block: 1em;">Your Bills</h2>
+            <ul id="billList"></ul>
         </div>
     </main>
     <script>
@@ -70,17 +61,38 @@
             }
         });
 
-        const loadMemberCount = () => {
-            let membersCount = document.getElementById('membersCount')
-            let count = JSON.parse(localStorage.getItem('memberList'))
-            console.log(count);
-            membersCount.innerHTML = `<a href='../pages/members.html'><i class="fa-solid fa-users"></i> ${count.length}</a>`
+
+        function displayBills() {
+            const billList = document.getElementById('billList');
+            billList.innerHTML = '';
+
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith('bill_')) {
+                    const bill = JSON.parse(localStorage.getItem(key));
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `Bill ID: ${bill.id} | Amount: $${bill.totalAmount}`;
+                    listItem.classList.add('mb')
+                    const viewDetailsButton = document.createElement('button');
+
+                    viewDetailsButton.innerHTML = '<i class="fa-solid fa-eye"></i> View'
+                    viewDetailsButton.classList.add('viewDetails')
+                    viewDetailsButton.addEventListener('click', function () {
+
+                        alert(`Bill ID: ${bill.id}\nAmount: ${bill.totalAmount}\nMemberID: ${bill.memberId}\nDuration: ${bill.duration} months\nMembership Type: ${bill.membership}`);
+                    });
+
+
+                    listItem.appendChild(viewDetailsButton);
+
+                    billList.appendChild(listItem);
+                }
+            }
+
+
         }
-
-        loadMemberCount()
+        displayBills();
     </script>
-
-
     <script src="../js/admin.js"></script>
 </body>
 

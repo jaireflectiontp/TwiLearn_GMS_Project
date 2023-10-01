@@ -36,13 +36,14 @@
                                 class="fa-solid fa-users"></i>members</a></li>
                     <li class="nav-items"><a class="nav-links" href="./membership.html"><i
                                 class="fa-solid fa-id-card"></i>membership</a>
+                    </li>
                     <li class="nav-items"><a class="nav-links" href="./dietPlan.html"><i
                                 class="fa-solid fa-clipboard-list"></i>diet
                             plans</a>
+                    </li>
                     <li class="nav-items"><a class="nav-links" href="./store.html"><i
                                 class="fa-solid fa-store"></i>supplement
                             store</a>
-                    <li class="nav-items"><a class="nav-links" href="#"><i class="fa-solid fa-user-group"></i>users</a>
                     </li>
                 </ul>
             </ul>
@@ -132,17 +133,17 @@
                                 <div class="input-control">
                                     <label for="duration">Duration</label>
                                     <select id="duration" name="duration">
-                                        <option value="1month">1 Month</option>
-                                        <option value="3month">3 Month</option>
-                                        <option value="6month">6 Month</option>
-                                        <option value="12month">12 Month</option>
+                                        <option value="1 ">1 Month</option>
+                                        <option value="3">3 Month</option>
+                                        <option value="6 ">6 Month</option>
+                                        <option value="12 ">12 Month</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="form-control">
                                 <button id="add" type="button">Save</button>
-                                <button type="button" onclick="closeModal()">Cancel</button>
+                                <button id="cancel" type="button" onclick="closeModal()">Cancel</button>
                             </div>
                         </form>
                     </div>
@@ -152,7 +153,6 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Sr No</th>
                                 <th>Member Id</th>
                                 <th>Name</th>
                                 <th>Email</th>
@@ -170,6 +170,18 @@
             </div>
         </div>
     </main>
+    <script>
+        const currentPath = window.location.pathname;
+        const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+        const navLinks = document.querySelectorAll('.nav-list a');
+        navLinks.forEach((link) => {
+            const linkPath = link.getAttribute('href')
+            const linkFilename = linkPath.substring(linkPath.lastIndexOf('/') + 1);
+            if (currentPage === linkFilename) {
+                link.classList.add('active-nav');
+            }
+        });
+    </script>
     <script src="../js/admin.js"></script>
 </body>
 

@@ -1,15 +1,43 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary: #0e141e;
+  --secondary: #111827;
+  --highlight: #32c766;
+  --border: #576871;
+  --error: #dd2c00;
+  --bg: #060b10;
+  --cards: #1e242c;
+  --tabs: #272f38;
+  --hover: #0c2a2a;
+  --buttons: #2036a1;
+  --notify: #1b205b;
+  --text: #cde2ff;
+  --border: #3b434c;
+  --fill: #32e6e2;
+  --table: #4d565f;
+  --faintedText: #7e8792;
+}
+
 .member-board {
-  border: 1px solid red;
+  background-color: var(--cards);
+  border-radius: 5px;
+  padding: 10px;
 }
 .member-board .member-board-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.8em 1em;
-  border: 1px solid;
 }
 .member-board .member-board-header h3 {
   text-transform: capitalize;
+  color: var(--fill);
 }
 .member-board .member-board-header .member-add-btn {
   padding: 6px 30px;
@@ -18,11 +46,16 @@
   border-radius: 5px;
   outline: none;
   cursor: pointer;
+  border: none;
+  background-color: var(--notify);
+  color: var(--text);
+}
+.member-board .member-board-header .member-add-btn:hover {
+  background-color: var(--buttons);
 }
 .member-board .member-board-header .add-member-modal {
-  border: 1px solid red;
   display: none;
-  padding: 1em;
+  padding: 2em;
   position: fixed;
   top: 6%;
   left: 22%;
@@ -30,14 +63,17 @@
   background: #fff;
   z-index: 9;
   border-radius: 5px;
+  background-color: var(--bg);
+  box-shadow: 1px 1px 10px 1px var(--hover);
 }
 .member-board .member-board-header .add-member-modal .modal-heading {
   display: flex;
   justify-content: space-between;
   padding-bottom: 1em;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid var(--hover);
+  letter-spacing: 1px;
+  color: var(--fill);
 }
-/*.member-board .member-board-header .add-member-modal */
 .member-board .member-board-header .add-member-modal form {
   display: grid;
   gap: 1.5em;
@@ -71,9 +107,36 @@ textarea {
   padding: 8px 10px;
   border-radius: 3px;
   outline: none;
-  border: 1px solid #ccc;
-  background-color: #fefefe;
+  border: 1px solid var(--border);
+  background-color: var(--bg);
+  color: var(--text);
 }
+.form-control button {
+  border: 1px solid transparent;
+  outline: none;
+  font-weight: 500;
+  color: var(--text);
+  padding: 8px;
+  width: 100px;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+.form-control #add {
+  background-color: var(--notify);
+}
+#add:hover {
+  background-color: var(--buttons);
+  color: #fff;
+}
+.form-control #cancel {
+  background-color: transparent;
+  border-color: var(--border);
+}
+.form-control #cancel:hover {
+  background-color: var(--error);
+  border-color: var(--error);
+}
+
 .member-board
   .member-board-header
   .add-member-modal
@@ -82,45 +145,47 @@ textarea {
   .input-control {
   width: 100%;
 }
+#closeModalBtn {
+  color: var(--border);
+}
 #closeModalBtn:hover {
-  color: red;
+  color: var(--error);
 }
 .member-board .member-filter-section,
 .member-data-table {
   padding: 0.8em 1em;
-  border: 1px solid;
 }
 .member-data-table table {
   border-collapse: collapse;
   width: 100%;
 }
+thead {
+  background-color: var(--tabs);
+}
+
 .member-data-table table th,
 td {
-  border: 1px solid;
+  border: 1px solid var(--border);
   padding: 8px;
 }
 td {
-  text-align: left;
+  text-align: center;
 }
 tr th:first-child,
 td:first-child {
-  width: 5%;
+  width: 10%;
 }
 tr th:last-child,
 td:last-child {
-  width: 22%;
+  width: 28%;
 }
 tr th:nth-child(2),
 td:nth-child(2) {
-  width: 12%;
+  width: 27%;
 }
 tr :nth-child(3),
 td:nth-child(3) {
-  width: 23%;
-}
-tr th:nth-child(4),
-td:nth-child(4) {
-  width: 23%;
+  width: 20%;
 }
 tr th:nth-child(5),
 td:nth-child(5) {
@@ -132,26 +197,33 @@ tr td:last-child .btn-wrapper {
 }
 
 tr td:last-child .btn-wrapper button {
-  padding: 2px 10px;
+  padding: 5px 10px;
   cursor: pointer;
+  border-radius: 20px;
+  background-color: var(--tabs);
+  border: none;
+  outline: none;
+  color: var(--text);
+}
+tr td:last-child .btn-wrapper button:hover {
+  background-color: var(--table);
 }
 
 .members-details-container {
   padding: 1em;
-  border: 1px solid orange;
+  border: 1px solid var(--border);
   max-width: 500px;
   border-radius: 6px;
   z-index: 999;
   position: relative;
   width: 100%;
-  background: antiquewhite;
+  background-color: var(--cards);
 }
-.members-details-container .detail-container-in {
-  border: 1px solid yellow;
-}
+
 .members-details-container .detail-container-in h3 {
   text-align: center;
   margin-bottom: 1.2em;
+  color: var(--fill);
 }
 .members-details-container .detail-container-in ul li {
   list-style: none;
@@ -159,20 +231,19 @@ tr td:last-child .btn-wrapper button {
 }
 #details-overlay {
   position: fixed;
-  background: blueviolet;
+  background: var(--secondary);
   width: 100vw;
   height: 100vh;
   top: 0;
   left: 0;
   z-index: 99;
-  opacity: 56%;
+  opacity: 80%;
   display: none;
 }
 #members-details {
   display: none;
   width: 100%;
   height: 100vh;
-  border: 1px solid green;
   position: fixed;
   top: 0;
   left: 0;
@@ -184,4 +255,105 @@ tr td:last-child .btn-wrapper button {
   top: 0;
   right: 0;
   padding: 0.5em;
+  color: var(--faintedText);
+}
+#closeDetails:hover {
+  color: var(--error);
+}
+.billOverlay {
+  position: fixed;
+  background: var(--secondary);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  opacity: 80%;
+  display: none;
+}
+
+.bill-wrapper {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  place-items: center;
+  z-index: 999;
+}
+.bill-card {
+  position: relative;
+  width: 1000px;
+  padding: 1em;
+  background-color: var(--cards);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+#closeBill {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+.bill-card .membership-details {
+  display: flex;
+}
+.membership-details-left,
+.membership-details-right {
+  width: 50%;
+  padding: 0.5em;
+  display: grid;
+  gap: 8px;
+}
+.members-info {
+  display: flex;
+}
+.members-info span:first-child {
+  width: 20%;
+}
+.members-info span:last-child {
+  flex-grow: 1;
+}
+.billing-details {
+  padding: 1em 0.5em;
+  display: flex;
+}
+.bill-detail-col,
+.amount-col {
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+.bill-detail-col h3,
+.amount-col h3 {
+  border: 1px solid var(--border);
+  padding: 8px;
+}
+.bill-generation-btn {
+  text-align: center;
+}
+.bill-generation-btn button {
+  border: 1pc solid transparent;
+  outline: none;
+  border-radius: 6px;
+  background-color: var(--notify);
+  color: var(--text);
+  font-weight: bold;
+}
+.bill-generation-btn button:hover {
+  background-color: var(--buttons);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.totalAmt {
+  color: var(--fill);
+}
+input[type="date"] {
+  background-color: transparent;
+  color: var(--text);
+  border: none;
+  outline: none;
 }

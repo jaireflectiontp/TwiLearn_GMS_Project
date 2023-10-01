@@ -3,8 +3,27 @@
   display: flex;
   justify-content: space-around;
 }
+
+#keto {
+  background-image: url(../assets/keto\ logo.jpg);
+}
+#vegan {
+  background-image: url(../assets/vegan\ logo.jpg);
+}
+#noSugar {
+  background-image: url(../assets/nosugar\ logo.webp);
+}
+#raw {
+  background-image: url(../assets/raw\ logo.webp);
+}
+.active-plan {
+  transform: scale(1.5);
+  box-shadow: 3px 3px 13px -2px #51b279;
+  transition: 0.5s;
+}
 .dietPlans .dietTypes {
-  border: 1px solid red;
+  background-size: cover;
+  color: transparent;
   border-radius: 100%;
   width: 100px;
   height: 100px;
@@ -12,7 +31,6 @@
   cursor: pointer;
 }
 .dietChartContainer {
-  border: 1px solid green;
   padding-block: 1em;
 }
 .dietChartContainer .dailyDietCard {
@@ -21,30 +39,50 @@
 }
 .dietChartContainer .dailyDietCard .dietCard-in {
   padding: 1em 2em 1em 8em;
-  background-color: blue;
+  background-color: #efdecd;
   display: flex;
   justify-content: space-between;
-  height: 176px;
+  height: 220px;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
 }
 .dietChartContainer .dailyDietCard .dietCard-in .mealTime {
   width: 33%;
-  border: 1px solid white;
+  border-left: 2px solid #3d2b1f;
+  border-right: 2px solid #3d2b1f;
   text-align: left;
+  color: #060b10;
+  font-weight: 600;
+}
+.mealTime:first-child {
+  border-left: none !important;
+}
+.mealTime:last-child {
+  border-right: none !important;
+}
+.mealTime h4 {
+  text-indent: 1em;
+  color: #51b279;
 }
 .dietChartContainer .dailyDietCard .dietCard-in .mealTime ul {
   margin: 1em 1em 1em 2em;
 }
 .dayTag {
-  background-color: aqua;
+  color: #fff;
+  background-color: #51b279;
   clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-  width: 170px;
+  width: 200px;
   height: 100px;
   transform: rotateZ(-90deg);
   position: absolute;
-  top: 10px;
-  left: -50px;
+  top: 25px;
+  left: -66px;
   display: grid;
   place-items: center;
+  border-top-right-radius: 10px;
+  font-size: 2rem;
+  text-indent: 20px;
+  font-weight: bold;
 }
 .dailyDietCard::after {
   background-color: rgb(2, 107, 107);
@@ -59,25 +97,23 @@
 }
 
 .plan-wrapper {
-  border: 2px solid yellowgreen;
   padding: 2em 0;
   margin-block: 2em;
   display: none;
 }
 
 .product-banner {
-  border: 1px solid red;
   border-radius: 6px;
-  height: 350px;
+  height: 450px;
   background-image: url(../assets/banner.jpg);
   background-size: 100% 100%;
 }
 .slider-wrap {
   position: relative;
-  border: 1px solid red;
-  margin-block: 2em;
+  margin-block: 1em;
   overflow: hidden;
-  height: 300px;
+  height: 330px;
+  padding-block: 10px;
 }
 .main-slider {
   width: 180%;
@@ -87,29 +123,69 @@
 .slides {
   display: inline-block;
   width: 310px;
-  text-align: center;
-  background: aqua;
-  height: 300px;
+  height: 310px;
+  border: 2px solid transparent;
   margin-inline: 1em;
   display: grid;
-  place-items: center;
+  padding: 1em;
+  border-radius: 7px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.34);
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.34);
+  -moz-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.34);
+}
+.slides:hover {
+  border-color: #ffbe00;
+}
+.slide-content {
+  display: grid;
+}
+.slide-content p,
+h4 {
+  font-size: 1.1rem;
 }
 .carousel {
   position: relative;
+  margin-block: 3em;
+  font-family: "Courier New", Courier, monospace;
 }
 .btn {
+  background-color: #ffbe00;
+  padding: 0.5em;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  color: black;
+  outline: none;
+  border: none;
+}
+.carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  border: 1px solid greenyellow;
-  padding: 1em;
-  border-radius: 6px;
-  cursor: pointer;
   z-index: 9;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.fa-chevron-left,
+.fa-chevron-right {
+  padding: 0;
 }
 .prevBtn {
   left: -10px;
 }
 .nxtBtn {
   right: -10px;
+}
+.product-img {
+  width: 100%;
+  text-align: center;
+}
+.product-img img {
+  width: 160px;
+}
+.carousel-heading {
+  font-size: 2rem;
+  text-indent: 0.5em;
+  border-left: 5px solid #ffbe00;
 }

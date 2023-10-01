@@ -11,9 +11,24 @@
   --highlight: #32c766;
   --border: #576871;
   --error: #dd2c00;
+  --bg: #060b10;
+  --cards: #1e242c;
+  --tabs: #272f38;
+  --hover: #0c2a2a;
+  --buttons: #2036a1;
+  --notify: #1b205b;
+  --text: #cde2ff;
+  --border: #3b434c;
+  --fill: #32e6e2;
+}
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Courier New", Courier, monospace;
 }
 a {
   text-decoration: none;
+  color: var(--text);
 }
 a > i,
 i {
@@ -26,7 +41,7 @@ main .main-in {
   width: 100%;
   margin-inline: auto;
   padding: 1em;
-  border: 1px solid;
+  margin-top: 1em;
 }
 header .header-in {
   display: flex;
@@ -43,14 +58,15 @@ header .header-in .administrator .admin-controls {
   width: 200px;
   padding: 0.6em 1em;
   gap: 1rem;
-  border: 1px solid;
+  border: 1px solid var(--border);
   border-radius: 5px;
-  background-color: #fff;
+  background-color: var(--tabs);
+  color: var(--text);
   z-index: 1;
   display: none;
 }
-header .header-in .administrator .admin-controls .admin-account:hover .fa-gear {
-  transform: rotateZ("30deg");
+header .header-in .administrator .admin-controls a:hover {
+  color: var(--fill);
 }
 nav .navigation-in .nav-list {
   display: flex;
@@ -62,8 +78,8 @@ nav .navigation-in .nav-list .nav-items {
 nav .navigation-in .nav-list .nav-items .nav-links {
   text-transform: capitalize;
   font-weight: bold;
-  color: #0e141e;
   position: relative;
+  letter-spacing: 2px;
 }
 nav .navigation-in .nav-list .nav-items .nav-links::after {
   position: absolute;
@@ -72,25 +88,58 @@ nav .navigation-in .nav-list .nav-items .nav-links::after {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: #0e141e;
+  background-color: var(--fill);
   transform: scaleX(0);
   transition: 0.5s;
 }
+nav .navigation-in .nav-list .nav-items:hover .nav-links {
+  color: var(--fill);
+}
+nav .navigation-in .nav-list .nav-items .nav-links {
+  padding: 7px 10px;
+  border-radius: 5px;
+}
 nav .navigation-in .nav-list .nav-items:hover .nav-links::after {
   transform: scaleX(1);
+  color: var(--hover);
 }
-
+.active-nav {
+  color: var(--fill);
+  background-color: var(--hover);
+}
 main .main-in .adminTable {
-  border: 1px solid;
   padding: 1em;
   margin: 1em;
   display: flex;
   justify-content: space-between;
 }
+.main-in h4 {
+  color: var(--buttons);
+}
 main .main-in .adminTable .col {
   width: 32%;
   height: 180px;
-  border: 1px solid red;
+  background-color: var(--cards);
   border-radius: 0.5em;
   padding: 1em;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+}
+.header-in .col:hover {
+  background-color: var(--tabs);
+}
+
+.viewDetails {
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: var(--tabs);
+  border: none;
+  outline: none;
+  color: var(--text);
+  margin-left: 1em;
+}
+.mb {
+  margin-block: 0.5em;
 }

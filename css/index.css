@@ -34,13 +34,21 @@ body {
   border-radius: 10px;
   position: relative;
 }
-.main-container .container .admin-login-panel #loginError {
+.main-container .container .admin-login-panel #errorMsg {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   color: var(--error);
   top: 1em;
 }
+#memberErrorMsg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--error);
+  top: 1em;
+}
+
 .main-container .container .admin-login-panel form {
   padding: 3em;
   display: grid;
@@ -91,3 +99,10 @@ button {
   background-color: var(--highlight);
   border-color: #fff;
 }
+.button-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/**/

@@ -1,31 +1,23 @@
 
-let dietPlanList = document.querySelectorAll('span')
+const tabs = document.querySelectorAll('.dietTypes');
+const tabContents = document.querySelectorAll('.plan-wrapper');
 
-dietPlanList.forEach((plan) => {
-    plan.addEventListener('click', () => {
-        if (plan.textContent === 'keto') {
-            document.getElementById('keto-diet').style.display = 'block'
-            document.getElementById('raw-diet').style.display = 'none'
-            document.getElementById('vegan-diet').style.display = 'none'
-            document.getElementById('no-sugar-diet').style.display = 'none'
-        }
-        if (plan.textContent === 'raw') {
-            document.getElementById('keto-diet').style.display = 'none'
-            document.getElementById('raw-diet').style.display = 'block'
-            document.getElementById('vegan-diet').style.display = 'none'
-            document.getElementById('no-sugar-diet').style.display = 'none'
-        }
-        if (plan.textContent === 'vegan') {
-            document.getElementById('keto-diet').style.display = 'none'
-            document.getElementById('raw-diet').style.display = 'none'
-            document.getElementById('vegan-diet').style.display = 'block'
-            document.getElementById('no-sugar-diet').style.display = 'none'
-        }
-        if (plan.textContent === 'nosugar') {
-            document.getElementById('keto-diet').style.display = 'none'
-            document.getElementById('raw-diet').style.display = 'none'
-            document.getElementById('vegan-diet').style.display = 'none'
-            document.getElementById('no-sugar-diet').style.display = 'block'
-        }
-    })
-})
+tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+        tabContents.forEach((content) => {
+            content.style.display = 'none';
+        });
+
+        tabs.forEach((t) => {
+            t.classList.remove('active-plan');
+        });
+
+        const tabId = tab.getAttribute('data-tab');
+        const tabContent = document.getElementById(tabId);
+        tabContent.style.display = 'block';
+
+        tab.classList.add('active-plan');
+    });
+});
+
+tabs[0].click();
