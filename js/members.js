@@ -22,26 +22,30 @@ const getFieldValue = (id) => {
 }
 
 const loadTable = () => {
-    let newMemberList = JSON.parse(localStorage.getItem('memberList'))
-    let membersTable = document.getElementById('membersTable')
-    let mapedData = newMemberList?.map((members) => {
-        return (
-            `
-        <tr>
-        <td class='mId'>${members.memberId}</td>
-        <td>${members.firstName} ${members.middleName} ${members.lastName}</td>
-        <td>${members.email}</td>
-        <td>${members.contact}</td>
-        <td>
-            <div class="btn-wrapper"><button class='viewDetails'><i class="fa-solid fa-eye"></i>View</button>
-                <button class='deleteMember'><i class="fa-solid fa-trash-can"></i>Delete</button>
-            </div>
-        </td>
-    </tr>
-        `
-        )
-    })
-    membersTable.innerHTML = mapedData?.join('')
+    let newMemberList = JSON.parse(localStorage.getItem('memberList'));
+    let membersTable = document.getElementById('membersTable');
+    let mapedData = [];
+
+    if (newMemberList && newMemberList.length > 0) {
+        mapedData = newMemberList.map((member) => {
+            return `
+            <tr>
+                <td class='mId'>${member.memberId}</td>
+                <td>${member.firstName} ${member.middleName} ${member.lastName}</td>
+                <td>${member.email}</td>
+                <td>${member.contact}</td>
+                <td>
+                    <div class="btn-wrapper">
+                        <button class='viewDetails'><i class="fa-solid fa-eye"></i>View</button>
+                        <button class='deleteMember'><i class="fa-solid fa-trash-can"></i>Delete</button>
+                    </div>
+                </td>
+            </tr>
+        `;
+        });
+    }
+    membersTable.innerHTML = mapedData.join('');
+
 
 
     const handleMemberAction = (index, action) => {
