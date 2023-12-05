@@ -2,21 +2,18 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym Management System Admin Login</title>
-    <link rel="stylesheet" href="./css/index.css">
+    <title>Gym Management System</title>
+    <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
-    <div class="button-wrapper">
-        <button type="button" id="adminBtn">Admin</button>
-        <button id="memberBtn">Member</button>
-    </div>
-    <div class="main-container">
-        <div id="container" class="container" style="display: none;">
-            <div class="admin-login-panel">
-                <div id="errorMsg"></div>
+    <div class="main-container" style="background-image: url(./assets/background-gym.jpg);">
+        <div id="admin-form" class="login-panel">
+            <div id="admin-container" class="container">
+                <div id="adminLoginErr" class="errorMsg"></div>
                 <form id="adminForm">
                     <div class="inpt-control">
                         <label for="username">username</label>
@@ -28,30 +25,13 @@
                         <input type="password" id="password" name="password" placeholder="Enter your password">
                     </div>
                     <div class="inpt-control btn-control">
-                        <button type="submit">Login</button>
+                        <button id="adminLoginBtn" type="submit">Login</button>
                     </div>
                 </form>
-
-            </div>
-        </div>
-
-        <div id="member-container" class="container" style="display: none;">
-            <div class="admin-login-panel">
-                <div id="memberErrorMsg"></div>
-                <form id="memberForm">
-                    <div class="inpt-control">
-                        <label for="memberId">Member ID</label>
-                        <input type="text" id="memberId" name="memberId" placeholder="Enter your memberId">
-                    </div>
-                    <div class="inpt-control btn-control">
-                        <button type="submit">Login</button>
-                    </div>
-                </form>
-
             </div>
         </div>
     </div>
-    <script src="../js/index.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 
 </html>

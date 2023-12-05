@@ -110,51 +110,56 @@ function generateBill(memberId, memberData) {
     billtemp.style.display = 'grid'
 
     billtemp.innerHTML =
-        `  <div class="bill-card">
-      <div id='closeBill'>X</div>
-<h2>Membership Invoice</h2>
-<br>
-<hr>
-<br>
-<div class="membership-details">
-    <div class="membership-details-left">
-        <div class="members-info"><span>Name</span><span>: ${memberData.firstName} ${memberData.middleName} ${memberData.lastName}</span></div>
-        <div class="members-info"><span>Email</span><span>: ${memberData.email}</span></div>
-        <div class="members-info"><span>Phone No</span><span>: ${memberData.contact}</span></div>
-        <div class="members-info"><span>Address</span><span>: ${memberData.address}</span></div>
+        `
+        <div class="bill-card">
+    <div id='closeBill'><i data-lucide="x-circle"></i>
     </div>
-    <div class="membership-details-right">
-    <div class="members-info"><span>Due Date</span><span>: <input type="date" name="billDate" id="billDate"></span></div>
-        <div class="members-info"><span>MemberId</span><span>: ${memberId}</span></div>
-        <div class="members-info"><span>Bill Id</span><span>: ${billId}</span></div>
+    <h2>Membership Invoice</h2>
+    <br>
+    <hr>
+    <br>
+    <div class="membership-details">
+        <div class="membership-details-left">
+            <div class="members-info"><span>Name</span><span>: ${memberData.firstName} ${memberData.middleName}
+                    ${memberData.lastName}</span></div>
+            <div class="members-info"><span>Email</span><span>: ${memberData.email}</span></div>
+            <div class="members-info"><span>Phone No</span><span>: ${memberData.contact}</span></div>
+            <div class="members-info"><span>Address</span><span>: ${memberData.address}</span></div>
+        </div>
+        <div class="membership-details-right">
+            <div class="members-info"><span>Due Date</span><span>: <input type="date" name="billDate"
+                        id="billDate"></span></div>
+            <div class="members-info"><span>MemberId</span><span>: ${memberId}</span></div>
+            <div class="members-info"><span>Bill Id</span><span>: ${billId}</span></div>
+        </div>
     </div>
-</div>
-<div class="billing-details">
-    <div class="bill-detail-col">
-        <h3>Details</h3>
-        <br>
-        <p>Membership Type: <span>${memberData.membership}</span></p>
-        <br>
-        <p>Diet Plan: <span>${memberData.dietPlan}</span></p>
-        <br>
-        <p>Duration: <span>${memberData.duration} months</span></p>
-        <br>
-        <h3>Total</h3>
+    <div class="billing-details">
+        <div class="bill-detail-col">
+            <h3>Details</h3>
+            <br>
+            <p>Membership Type: <span>${memberData.membership}</span></p>
+            <br>
+            <p>Diet Plan: <span>${memberData.dietPlan}</span></p>
+            <br>
+            <p>Duration: <span>${memberData.duration} months</span></p>
+            <br>
+            <h3>Total</h3>
+        </div>
+        <div class="amount-col">
+            <h3>Amount</h3>
+            <br>
+            <p>---</p>
+            <br>
+            <p>&#x20B9; ${dietPlanAmount}</p>
+            <br>
+            <p>&#x20B9; ${durationAmount}</p>
+            <br>
+            <h3 class='totalAmt'>&#x20B9; ${amount}</h3>
+        </div>
     </div>
-    <div class="amount-col">
-        <h3>Amount</h3>
-        <br>
-        <p>---</p>
-        <br>
-        <p>&#x20B9; ${dietPlanAmount}</p>
-        <br>
-        <p>&#x20B9; ${durationAmount}</p>
-        <br>
-        <h3 class='totalAmt'>&#x20B9; ${amount}</h3>
-    </div>
-</div>
-<div class="bill-generation-btn"><button id='exportBill'>Generate</button></div>
-</div>`
+    <div class="bill-generation-btn"><button id='exportBill'>Generate</button></div>
+</div>  
+        `
 
     let exportBill = document.getElementById('exportBill')
     exportBill.addEventListener('click', () => {

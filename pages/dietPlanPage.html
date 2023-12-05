@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet PLan-GMS</title>
+    <link rel="stylesheet" href="../styles/index.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="header-in">
+            <div class="logo"><img src="../assets/logo.png" width="100px" height="80px" alt="logo"></div>
+            <div class="administrator" onclick="openAdminModal()">
+                <i id="adminIcon" class="fa-regular fa-user"></i>
+                Administrator
+                <div class="admin-controls">
+                    <a href="#1212" class="admin-account">
+                        <i class="fa-solid fa-user-gear"></i>
+                        Manage Account</a>
+                    <a href="../index.html" class="admin-logout">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        Log out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="navigation-in">
+            <ul class="nav-list">
+                <li class="nav-items"><a class="nav-links" href="./homePage.html">
+                        <i class="fa-solid fa-house"></i>
+                        home</a>
+                </li>
+                <li class="nav-items"><a class="nav-links" href="./members.html"><i class="fa-solid fa-users"></i>
+                        members</a></li>
+                <li class="nav-items"><a class="nav-links" href="./membership.html">
+                        <i class="fa-solid fa-id-card"></i>
+                        membership</a></li>
+                <li class="nav-items"><a class="nav-links" href="./dietPlanPage.html">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        diet
+                        plans</a></li>
+                <li class="nav-items"><a class="nav-links" href="./storePage.html">
+                        <i class="fa-solid fa-jug-detergent"></i> supplement
+                        store</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="main-in">
+            <div class="member-board" style="background-color: transparent;">
+
+                <div class="dietPlans">
+                    <span id="ketoPlan" data-tab="keto-diet" class="dietTypes"><img width="100%"
+                            src="../assets/keto.png" alt=""></span>
+                    <span id="veganPlan" data-tab="vegan-diet" class="dietTypes"><img width="100%"
+                            src="../assets/vegan.png" alt=""></span>
+                    <span id="noSugarPlan" data-tab="no-sugar-diet" class="dietTypes"><img width="100%"
+                            src="../assets/nosugar.png" alt=""></span>
+                    <span id="rawPlan" data-tab="raw-diet" class="dietTypes"><img width="100%" src="../assets/raw.png"
+                            alt=""></span>
+                </div>
+
+                <div class="dietChartContainer">
+                    <div class="plan-wrapper" id="keto-diet">
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 1</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Scramble 2-3 eggs in a pan with butter or coconut oil.</li>
+                                        <li>Add a handful of fresh spinach to the eggs and cook until wilted.</li>
+                                        <li>Serve with sliced avocado on the side.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Grill a chicken breast seasoned with your preferred herbs and spices.</li>
+                                        <li>Slice the grilled chicken and serve it on a bed of mixed greens.</li>
+                                        <li>Drizzle with olive oil and balsamic vinegar as a dressing.</li>
+
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Season salmon fillets with lemon juice, garlic, and herbs, then bake until
+                                            flaky.</li>
+                                        <li>Roast asparagus with olive oil and salt.</li>
+                                        <li>Make cauliflower mash by steaming cauliflower florets and mashing them with
+                                            butter and cream.</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 2</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Blend almond milk, a handful of spinach, a scoop of keto-friendly protein
+                                            powder, and a spoonful of nut butter.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Use large lettuce leaves as wraps and fill with sliced turkey, avocado, and
+                                            your
+                                            choice of mayo and mustard.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Stir-fry thin strips of beef with broccoli and bell peppers in a low-carb
+                                            stir-fry sauce </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 3</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Whisk eggs and pour into a hot, greased pan.</li>
+                                        <li>Add cheese, diced bell peppers, and sliced mushrooms to one half of the
+                                            omelette.</li>
+                                        <li>Fold the omelette in half and cook until the cheese melts.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Spiralize zucchini to make noodles.</li>
+                                        <li>Toss the zucchini noodles with keto-friendly pesto sauce and top with
+                                            grilled
+                                            chicken.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Season cod fillets with lemon, garlic, and herbs, then bake.</li>
+                                        <li>Roast Brussels sprouts with olive oil and salt.</li>
+                                        <li>Sauté spinach in butter until wilted.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 4</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Top full-fat Greek yogurt with fresh raspberries and a sprinkle of chia
+                                            seeds.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Combine fresh spinach, crispy bacon bits, and a creamy ranch dressing (make
+                                            sure
+                                            it's low-carb).</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Pan-fry pork chops with your choice of seasoning.</li>
+                                        <li>Steam broccoli and serve with cauliflower rice (finely chopped cauliflower
+                                            sautéed with butter).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 5</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Scramble eggs with diced tomatoes and sautéed kale until cooked to your
+                                            liking.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Make a tuna salad with canned tuna, mayo, diced celery, and cucumber.</li>
+                                        <li>Serve the tuna salad in large lettuce cups.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Grill shrimp with lemon and butter.</li>
+                                        <li>Roast asparagus and serve with the shrimp.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 6</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Mix chia seeds with coconut milk and refrigerate overnight.</li>
+                                        <li>Top with sliced almonds and a few blueberries in the morning.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Spread cream cheese on roast beef slices, add a pickle spear, and roll them
+                                            up.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Season chicken thighs with herbs and bake until cooked through.</li>
+                                        <li>Sauté spinach in butter until wilted.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 7</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Make an omelette and stuff it with sliced avocado and crispy bacon.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Grill steak strips and slice them.</li>
+                                        <li>Combine mixed greens, sliced avocado, and the grilled steak.</li>
+                                        <li>Dress with a keto-friendly vinaigrette.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Season lamb chops with mint, garlic, and olive oil, then bake or grill.</li>
+                                        <li>Roast cauliflower with olive oil and spices.</li>
+                                        <li>Serve with a sauce made from yogurt and fresh mint.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="plan-wrapper" id="raw-diet">
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 1</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Chop a variety of seasonal fruits like berries, melon, and citrus into
+                                            bite-sized pieces.</li>
+                                        <li>Mix the fruits in a bowl and serve.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Take large collard green leaves and blanch them briefly to soften.</li>
+                                        <li>Fill each collard green leaf with sliced avocado, shredded carrots, cucumber
+                                            strips, and a tahini dressing.</li>
+                                        <li>Roll up the collard greens like a wrap.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Spiralize zucchini to create "zoodles."</li>
+                                        <li>Blend fresh tomatoes, basil, garlic, and olive oil into a raw tomato sauce.
+                                        </li>
+                                        <li>Toss the zoodles with the raw tomato sauce.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 2</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Mix chia seeds with almond milk in a bowl, cover, and refrigerate overnight.
+                                        </li>
+                                        <li>Top with sliced bananas and chopped nuts in the morning.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Lay out a sheet of nori seaweed.</li>
+                                        <li>Fill it with julienned vegetables (bell peppers, carrots, cucumber), sliced
+                                            avocado, and a soy or tamari dipping sauce.</li>
+                                        <li>Roll up the nori like sushi and slice into pieces.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Prepare a large salad with mixed greens, cherry tomatoes, sliced bell
+                                            peppers,
+                                            sliced mushrooms, and a lemon vinaigrette dressing.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 3</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Blend frozen berries, a ripe banana, and a bit of water or almond milk until
+                                            smooth.</li>
+                                        <li>Pour into a bowl and top with sliced kiwi, coconut flakes, and chia seeds.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Blend cucumbers, tomatoes, red onions, bell peppers, garlic, and a bit of
+                                            olive
+                                            oil.</li>
+                                        <li>Chill the soup before serving.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Spiralize zucchini into noodles.</li>
+                                        <li>Make a raw pesto sauce using basil, pine nuts, garlic, olive oil, and
+                                            nutritional yeast.</li>
+                                        <li>Toss the zucchini noodles in the pesto sauce.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 4</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Slice fresh mango and pineapple and serve with a squeeze of fresh lime
+                                            juice.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Take large collard green leaves and blanch them briefly to soften.</li>
+                                        <li>Spread a layer of hummus on each leaf and add sliced olives, diced tomatoes,
+                                            and
+                                            shredded kale.</li>
+                                        <li>Roll up the collard greens like wraps.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Serve bite-sized cauliflower and broccoli florets with a tahini dipping
+                                            sauce.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 5</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Slice fresh papaya and serve with a drizzle of raw honey and a sprinkle of
+                                            chopped mint.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Make taco "meat" by processing walnuts and sun-dried tomatoes.</li>
+                                        <li>Fill lettuce leaves with the walnut mixture and top with a cashew-based
+                                            cheese
+                                            sauce.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Prepare a large salad with spinach and kale, sliced strawberries, almonds,
+                                            and a
+                                            balsamic vinaigrette dressing.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 6</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Slice fresh oranges and sprinkle with cinnamon. Add chopped almonds for
+                                            crunch.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Create zucchini noodles using a spiralizer.</li>
+                                        <li>Toss with a salad made from spiralized beets and carrots in a lemon-ginger
+                                            dressing.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Prepare a salad with a variety of raw vegetables and seaweed.</li>
+                                        <li>Top with a sesame ginger dressing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 7</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Slice fresh peaches and nectarines and drizzle with raw honey.</li>
+                                        <li>Sprinkle chopped almonds for added texture.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Create a stir-fry with raw cashews and a variety of julienned vegetables.
+                                        </li>
+                                        <li>Make a sauce using coconut aminos or another raw sauce of your choice.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Prepare a large mixed greens salad with diced mango, red onion, and avocado.
+                                        </li>
+                                        <li>Drizzle with a lime and cilantro dressing.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="plan-wrapper" id="vegan-diet">
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 1</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Cook rolled oats with almond milk and top with fresh fruit and chia seeds.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Combine chickpeas and vegetables, then drizzle with the dressing.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Combine chickpeas and vegetables, then drizzle with the dressing.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 2</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Blend the ingredients until smooth.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Toss cooked quinoa with roasted veggies and drizzle with the dressing.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Stir-fry a mix of your favorite vegetables and tofu, then add the sauce.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 3</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Spread mashed avocado on toasted bread and season with salt, pepper, and red
+                                            pepper flakes.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Combine black beans, corn, red onion, and a dressing made from lime juice
+                                            and
+                                            cilantro.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Cook whole-grain spaghetti and top with a vegan marinara sauce.</li>
+                                        <li>Toast whole-grain bread with garlic and vegan butter.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 4</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Mix chia seeds and almond milk, refrigerate overnight, and top with berries.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Spread hummus on a tortilla and add sliced cucumber, red pepper, spinach,
+                                            and
+                                            shredded carrots.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Combine beans, tomatoes, and spices in a pot and simmer until flavors meld.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 5</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Prepare pancakes using a vegan pancake mix or your favorite vegan pancake
+                                            recipe.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Roll sushi using nori seaweed, sushi rice, and your choice of vegetables.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+
+                                        <li>Stuff bell peppers with a mixture of quinoa, black beans, and tomato sauce,
+                                            then
+                                            bake.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 6</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Crumble tofu into a pan, add diced vegetables, and season with turmeric and
+                                            other spices.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Fill a whole-grain wrap with falafel, tahini sauce, and tabbouleh salad.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Cook a mix of vegetables in a coconut milk-based curry sauce and serve over
+                                            cooked basmati rice.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 7</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Mix oats with almond yogurt, refrigerate overnight, and top with almonds and
+                                            apples.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Make a hearty soup with lentils, assorted vegetables, and vegetable broth.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Stuff mushroom caps with a mixture of breadcrumbs, sautéed spinach, garlic,
+                                            and
+                                            spices, then bake until tender.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="plan-wrapper" id="no-sugar-diet">
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 1</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Heat a non-stick pan over medium heat and sauté spinach and diced tomatoes
+                                            until
+                                            wilted.</li>
+                                        <li>Beat eggs and pour them into the pan, scrambling until cooked to your
+                                            liking.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Grill a seasoned chicken breast until cooked through.</li>
+                                        <li>Prepare a salad with mixed greens, cherry tomatoes, cucumber, and bell
+                                            peppers.
+                                        </li>
+                                        <li>Drizzle with extra virgin olive oil and balsamic vinegar.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Season salmon fillets with lemon juice, garlic, and herbs, then bake until
+                                            flaky.</li>
+                                        <li>Roast asparagus with olive oil, salt, and pepper.</li>
+                                        <li>Serve with cooked quinoa.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 2</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Top a bowl of plain Greek yogurt with fresh berries like strawberries,
+                                            blueberries, or raspberries.</li>
+                                        <li>Sprinkle with chopped nuts for added crunch.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Lay out large lettuce leaves and fill with sliced turkey, avocado, and a
+                                            dollop
+                                            of mustard.</li>
+                                        <li>Serve with carrot sticks as a side.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Stir-fry thinly sliced beef with broccoli florets and bell pepper strips.
+                                        </li>
+                                        <li>Use a low-sugar stir-fry sauce or make your own with ingredients like soy
+                                            sauce,
+                                            garlic, ginger, and a sugar substitute like stevia.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 3</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Mix chia seeds with almond milk, refrigerate overnight, and top with fresh
+                                            strawberries in the morning.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Enjoy a bowl of homemade lentil soup with a side salad made from mixed
+                                            greens,
+                                            cucumber, and a no-sugar vinaigrette.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Season shrimp with lemon, garlic, and herbs, then grill.</li>
+                                        <li>Roast Brussels sprouts with olive oil, salt, and pepper.</li>
+                                        <li>Serve with cauliflower rice (finely chopped cauliflower sautéed with olive
+                                            oil).
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 4</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Mix chia seeds with almond milk and refrigerate overnight, then add sliced
+                                            kiwi
+                                            and crushed almonds in the morning.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Toss cooked quinoa with roasted vegetables and drizzle with a dressing made
+                                            from
+                                            lemon juice and tahini.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Season chicken thighs with your preferred herbs and spices and bake or grill
+                                            until cooked through.</li>
+                                        <li>Steam broccoli and serve with cooked brown rice.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 5</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Sauté diced bell peppers until tender, add crumbled tofu and spinach, and
+                                            season
+                                            with turmeric and other spices.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Enjoy a bowl of homemade vegan lentil soup with a side salad made from mixed
+                                            greens, drizzled with lemon vinaigrette.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Season the fish with lemon juice, garlic, and herbs, then bake or grill.
+                                        </li>
+                                        <li>Sauté kale in olive oil until wilted and serve with cooked quinoa.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 6</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Sauté diced bell peppers until tender, add crumbled tofu and spinach, and
+                                            season
+                                            with turmeric and other spices.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Enjoy a bowl of homemade vegan lentil soup with a side salad made from mixed
+                                            greens, drizzled with lemon vinaigrette.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Season the fish with lemon juice, garlic, and herbs, then bake or grill.
+                                        </li>
+                                        <li>Sauté kale in olive oil until wilted and serve with cooked quinoa.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dailyDietCard">
+                            <div class="dayTag">Day 7</div>
+                            <div class="dietCard-in">
+                                <div class="mealTime">
+                                    <h4>Breakfast</h4>
+                                    <ul>
+                                        <li>Blend the ingredients until smooth.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Lunch</h4>
+                                    <ul>
+                                        <li>Top cooked falafel with hummus and serve with tabbouleh salad and cucumber
+                                            slices.</li>
+                                    </ul>
+                                </div>
+                                <div class="mealTime">
+                                    <h4>Dinner</h4>
+                                    <ul>
+                                        <li>Stir-fry tofu and vegetables in a low-sugar teriyaki sauce until heated
+                                            through.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+    <script src="../js/index.js"></script>
+    <script>
+        const tabs = document.querySelectorAll('.dietTypes');
+        const tabContents = document.querySelectorAll('.plan-wrapper');
+
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                tabContents.forEach((content) => {
+                    content.style.display = 'none';
+                });
+
+                tabs.forEach((t) => {
+                    t.classList.remove('active-plan');
+                });
+
+                const tabId = tab.getAttribute('data-tab');
+                const tabContent = document.getElementById(tabId);
+                tabContent.style.display = 'block';
+
+                tab.classList.add('active-plan');
+            });
+        });
+
+        tabs[0].click();
+    </script>
+</body>
+
+</html>

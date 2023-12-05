@@ -5,7 +5,7 @@
     <link rel="icon" type="image/x-icon" href="../assets/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membership-GMS</title>
+    <title>Home-GMS</title>
     <link rel="stylesheet" href="../styles/index.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -55,36 +55,26 @@
     </nav>
     <main>
         <div class="main-in">
-            <div class="member-board">
-                <div class="member-board-header">
-                    <h3>memberships</h3>
-                </div>
-                <div class="member-data-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Member Id</th>
-                                <th>Name</th>
-                                <th>Diet Plan</th>
-                                <th>Membership</th>
-                                <th>Duration</th>
-                                <th>Bill</th>
-                            </tr>
-                        </thead>
-                        <tbody id="membershipTable">
-
-                        </tbody>
-                    </table>
-                    <div id="details-overlay"></div>
-                    <div id="members-details"></div>
-                </div>
+            <h4 style="margin-bottom: 0.6em;">Welcome back Admin!</h4>
+            <hr>
+            <div class="adminTable">
+                <div id="membersCount" class="col"></div>
+                <div class="col">Active Memberships</div>
+                <div class="col" onclick="getNewPlans()">New Plans</div>
             </div>
         </div>
-        <div class="billOverlay" id="bill-overlay"></div>
-        <div class="bill-wrapper" id="bill-temp"></div>
     </main>
+    <script src="../js/auth.js"></script>
     <script src="../js/index.js"></script>
-    <script src="../js/membership.js"></script>
+    <script>
+        const loadMemberCount = () => {
+            let membersCount = document.getElementById('membersCount')
+            let count = JSON.parse(localStorage.getItem('memberList'))
+            membersCount.innerHTML = `<a href='../pages/members.html'><i class="fa-solid fa-users-line"></i>${count.length}</a>`
+        }
+        loadMemberCount()
+    </script>
+
 </body>
 
 </html>

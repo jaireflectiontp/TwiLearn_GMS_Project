@@ -2,25 +2,31 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym Members</title>
-    <link rel="stylesheet" href="../css/home.css">
-    <link rel="stylesheet" href="../css/members.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    <title>Gym Members-GMS</title>
+    <link rel="stylesheet" href="../styles/index.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <header>
         <div class="header-in">
-            <div class="logo">Gym Management System</div>
-            <div class="administrator" onclick="openAdminModal()"><i class="fa-regular fa-user"
-                    id="adminIcon"></i>Administrator
+            <div class="logo"><img src="../assets/logo.png" width="100px" height="80px" alt="logo"></div>
+            <div class="administrator" onclick="openAdminModal()">
+                <i id="adminIcon" class="fa-regular fa-user"></i>
+                Administrator
                 <div class="admin-controls">
-                    <a href="#1212" class="admin-account"><i class="fa-solid fa-gear"></i>Manage Account</a>
-                    <a href="/html/index.html " class="admin-logout"><i class="fa-solid fa-power-off"></i>Log out</a>
+                    <a href="#1212" class="admin-account">
+                        <i class="fa-solid fa-user-gear"></i>
+                        Manage Account</a>
+                    <a href="../index.html" class="admin-logout">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        Log out</a>
                 </div>
             </div>
         </div>
@@ -28,24 +34,22 @@
     <nav>
         <div class="navigation-in">
             <ul class="nav-list">
-                <ul class="nav-list">
-                    <li class="nav-items"><a class="nav-links" href="./home.html"><i
-                                class="fa-solid fa-house"></i>home</a>
-                    </li>
-                    <li class="nav-items"><a class="nav-links" href="./members.html"><i
-                                class="fa-solid fa-users"></i>members</a></li>
-                    <li class="nav-items"><a class="nav-links" href="./membership.html"><i
-                                class="fa-solid fa-id-card"></i>membership</a>
-                    </li>
-                    <li class="nav-items"><a class="nav-links" href="./dietPlan.html"><i
-                                class="fa-solid fa-clipboard-list"></i>diet
-                            plans</a>
-                    </li>
-                    <li class="nav-items"><a class="nav-links" href="./store.html"><i
-                                class="fa-solid fa-store"></i>supplement
-                            store</a>
-                    </li>
-                </ul>
+                <li class="nav-items"><a class="nav-links" href="./homePage.html">
+                        <i class="fa-solid fa-house"></i>
+                        home</a>
+                </li>
+                <li class="nav-items"><a class="nav-links" href="./members.html"><i class="fa-solid fa-users"></i>
+                        members</a></li>
+                <li class="nav-items"><a class="nav-links" href="./membership.html">
+                        <i class="fa-solid fa-id-card"></i>
+                        membership</a></li>
+                <li class="nav-items"><a class="nav-links" href="./dietPlanPage.html">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        diet
+                        plans</a></li>
+                <li class="nav-items"><a class="nav-links" href="./storePage.html">
+                        <i class="fa-solid fa-jug-detergent"></i> supplement
+                        store</a></li>
             </ul>
         </div>
     </nav>
@@ -54,12 +58,13 @@
             <div class="member-board">
                 <div class="member-board-header">
                     <h3>member list</h3>
-                    <button id="add-member" class="member-add-btn"><i class="fa-solid fa-plus"></i>New</button>
+                    <button id="add-member" class="member-add-btn"><i class="fa-solid fa-plus"></i>
+                        New</button>
                     <div class="add-member-modal">
                         <div class="modal-heading">
-                            <h3><i class="fa-solid fa-plus"></i>New Member</h3>
+                            <h3><i class="fa-solid fa-user-plus"></i>
+                                New Member</h3>
                             <i id="closeModalBtn" class="fa-regular fa-circle-xmark"></i>
-
                         </div>
                         <form id="add-member" action="member-detail">
                             <div class="form-control">
@@ -170,19 +175,8 @@
             </div>
         </div>
     </main>
-    <script>
-        const currentPath = window.location.pathname;
-        const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
-        const navLinks = document.querySelectorAll('.nav-list a');
-        navLinks.forEach((link) => {
-            const linkPath = link.getAttribute('href')
-            const linkFilename = linkPath.substring(linkPath.lastIndexOf('/') + 1);
-            if (currentPage === linkFilename) {
-                link.classList.add('active-nav');
-            }
-        });
-    </script>
-    <script src="../js/admin.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/members.js"></script>
 </body>
 
 </html>

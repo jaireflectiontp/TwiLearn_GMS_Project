@@ -1,0 +1,38 @@
+@mixin btn {
+  padding: 12px 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  outline: none;
+  border-radius: 6px;
+}
+@mixin btn_hover {
+  color: #fff;
+  background-color: transparent;
+  border-color: #32c766;
+  box-shadow: 0 0 4px 0 #32c766;
+  opacity: 100%;
+}
+@mixin container-width {
+  max-width: 1400px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 1em;
+  margin-top: 1em;
+}
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin placeItem-center {
+  display: grid;
+  place-items: center;
+}
+@mixin alignIcon {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
