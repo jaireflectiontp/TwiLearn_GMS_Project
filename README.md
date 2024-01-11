@@ -1,96 +1,74 @@
+- Netlify Deployed Link - [Gym Management System](https://stirring-longma-4ae186.netlify.app)
+
 # Idea
 
-Being a frontend developer, I chose to develop a project using React.js, leveraging its features and capabilities, I wanted to use what I've learned to build an e-commerce project. I applied the principles I've studied to create a website that reflects what I've been taught.
+As a frontend developer intern at Twilearn Edutech, I undertook the responsibility of creating a Gym Management System project.
 
-# Tech Stack
+### Features
 
-In this project, I've utilized a robust tech stack comprising **React.js**, **Redux/Toolkit**, **SASS**, **Material UI**, **React-Bootstrap**, **Formik**, **React Router**, and **Axios**. These tools collectively empowered me to build a feature-rich e-commerce platform that integrates various functionalities while leveraging the strengths of each technology.
+In this project, I was assigned the task of implementing several features.
 
-For the backend, I set up a server that serves mock data specifically tailored for this project.
-This simplified backend structure allowed for seamless testing and development of the front-end functionalities without relying on a full-fledged backend system.
+- **Admin Login:**
 
-# Features
+- **member Addition:**
 
-This project boasts a range of key features:
+- **Member Removal:**
 
-- **User Authentication:**
+- **Reading Member Details:**
 
-  - Implemented using Formik and Redux Toolkit.
-
-- **Product Management:**
-
-  - Utilized Redux Toolkit for efficient product management.
-
-- **Cart and Checkout Functionality:**
-
-  - Seamless integration for an easy shopping experience.
-
-- **Product Filtering and Sorting:**
-
-  - Implemented mechanisms for users to filter and sort products efficiently.
-
-- **Dynamic Product Search:**
-  - Enabled a search feature for users to find products easily.
+- **Integrating Section For Diet Chart & Supplement Store:**
 
 # Project Overview
 
-## HomePage:
+## Login Window:
 
-![Home page](https://raw.githubusercontent.com/jaireflectiontp/eCommerce-site/main/frontend/public/homepage_ss.jpeg)
+The login window offers a straightforward design, comprising only essential elements: username and password fields. User-friendly validation ensures a smooth and secure login experience.
 
-## SignUp Page:
+- **Username** : Admin
+- **Password** : Admin@123
 
-Here's a simple sign-up page that I've implemented. I've employed Redux Toolkit for streamlined state management and Formik to handle form errors and submissions.
+![SignUp page](https://raw.githubusercontent.com/jaireflectiontp/TwiLearn_GMS_Project/main/assets/readmeImages/login_window.jpeg)
 
-![SignUp page](https://raw.githubusercontent.com/jaireflectiontp/eCommerce-site/main/frontend/public/signup_ss.jpeg)
+## Home Page:
 
-## SignIn Page:
+![Home page](https://raw.githubusercontent.com/jaireflectiontp/TwiLearn_GMS_Project/main/assets/readmeImages/homepage.jpeg)
 
-We implemented the sign-in functionality in a similar manner.
+## Members Page:
 
-![SignIn page](https://raw.githubusercontent.com/jaireflectiontp/eCommerce-site/main/frontend/public/signin_ss.jpeg)
+The members page features a comprehensive list of current members, accompanied by a user-friendly interface that includes a convenient button for seamlessly adding new members.
 
-## Account Page:
+![SignIn page](https://raw.githubusercontent.com/jaireflectiontp/TwiLearn_GMS_Project/main/assets/readmeImages/members.jpeg)
 
-Upon logging in, users gain access to an account section where they can view and manage their details. Additionally, they have the option to easily log out when needed.
+## Members Form:
 
-![Account page](https://raw.githubusercontent.com/jaireflectiontp/eCommerce-site/main/frontend/public/account_ss.jpeg)
+![Account page](https://raw.githubusercontent.com/jaireflectiontp/TwiLearn_GMS_Project/main/assets/readmeImages/memberForm.jpeg)
 
-## Products Page:
+## Membership Page:
 
-All the products displayed here are sourced from a server I personally created. I developed an **API** that contains comprehensive product details, distinct categories, associated filters, and image links. The entire webpage is constructed from various components, each serving distinct functionalities. Moreover, I've integrated utility functions for efficient filtering and sorting processes.
+In the membership page, users can easily view the selected membership type, associated diet plan, and the specified duration, providing a clear overview of their membership details.
 
-![ProductsListing page](https://raw.githubusercontent.com/jaireflectiontp/eCommerce-site/main/frontend/public/products_ss.jpeg)
+![ProductsListing page](https://raw.githubusercontent.com/jaireflectiontp/TwiLearn_GMS_Project/main/assets/readmeImages/membership.jpeg)
 
-## Product Details Page:
+## Membership Invoice:
 
-The section comprises comprehensive product details and vivid descriptions
+The membership invoice is dynamically generated, capturing details such as the type of membership chosen by the member, the specified duration, and the selected diet plan type. The modal elegantly presents comprehensive user details alongside the relevant billing information for a seamless and informative invoicing experience.
 
-![Product Details page](https://raw.githubusercontent.com/jaireflectiontp/eCommerce-site/main/frontend/public/productdetail_ss.jpeg)
+![Product Details page](https://raw.githubusercontent.com/jaireflectiontp/TwiLearn_GMS_Project/main/assets/readmeImages/invoice.jpeg)
 
-## Cart Page:
+## Diet Plans:
 
-On the cart page, we can view the products added along with their quantities displayed in the navigation. Additionally, the cart page shows the total sum of all product prices,
-Also users have the ability to adjust the quantity of products and proceed to checkout.
+In the diet plan section, I implemented four distinct plans, allowing users to seamlessly toggle and view the weekly plan associated with each plan type.
 
-![Cart page](https://raw.githubusercontent.com/jaireflectiontp/eCommerce-site/main/frontend/public/cartpage_ss.jpeg)
+![Cart page](https://raw.githubusercontent.com/jaireflectiontp/TwiLearn_GMS_Project/main/assets/readmeImages/dietPlans.jpeg)
 
-## Checkout Page:
+## Supplement Store:
 
-At the checkout, the initial step involves entering the address information, without completing this step, users won't be able to proceed further."
+![Checkout page](https://raw.githubusercontent.com/jaireflectiontp/TwiLearn_GMS_Project/main/assets/readmeImages/supplements.jpeg)
 
-![Checkout page](https://raw.githubusercontent.com/jaireflectiontp/eCommerce-site/main/frontend/public/checkout_ss.jpeg)
+# Tech Stack
 
-The subsequent step involves the payment stage, where users are required to input their card details.
+HTML, CSS, JavaScript
 
-![Payment stage](https://raw.githubusercontent.com/jaireflectiontp/eCommerce-site/main/frontend/public/checkoutPayment_ss.jpeg)
+# Tools
 
-At the order summary stage, users are presented with a comprehensive overview: all cart products, the shipping address, payment details, and the total amount. <br> And at this point, they're ready to place their order!
-
-![Order summary](https://raw.githubusercontent.com/jaireflectiontp/eCommerce-site/main/frontend/public/orderSummary_ss.jpeg)
-
-## Contact page
-
-At the end, there's a simple user interface for the contact page featuring a map and a contact form.
-
-![Contact page](https://raw.githubusercontent.com/jaireflectiontp/eCommerce-site/main/frontend/public/contact_ss.jpeg)
+VS Code, GitHub, Netlify
